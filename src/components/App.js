@@ -32,13 +32,13 @@ function App() {
     setDetails(e.target.value)
   }
 
-  function handleTaskFormSubmit(e) {
-    e.preventDefault()
-    const newTask = {text: details, category: newTaskCategory}
+  function handleTaskFormSubmit(newTask) {
+    console.log(newTask.category)
     const newTaskArray = [...taskArray, newTask]
     setTaskArray(newTaskArray)
     setDetails("")
     setNewTaskCategory("Code")
+
   }
 
   return (

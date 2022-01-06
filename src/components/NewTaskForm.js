@@ -7,8 +7,14 @@ function NewTaskForm({ categories, onCategorySelect, onTaskFormSubmit, onDetails
   //   return <option value={category} key={category}>{category}</option>
   // }})
 
+    function handleOnSubmit(e) {
+      e.preventDefault()
+      const newTask = {text: details, category: newTaskCategory}
+      onTaskFormSubmit(newTask)
+    }
+
   return (
-    <form className="new-task-form" onSubmit={onTaskFormSubmit}>
+    <form className="new-task-form" onSubmit={handleOnSubmit}>
       <label>
         Details
         <input type="text" name="text" value={details} onChange={onDetailsChange}/>
