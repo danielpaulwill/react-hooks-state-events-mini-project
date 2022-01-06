@@ -4,8 +4,6 @@ import NewTaskForm from "./NewTaskForm";
 import TaskList from "./TaskList";
 
 import { CATEGORIES, TASKS } from "../data";
-console.log("Here's the data you're working with");
-console.log({ CATEGORIES, TASKS });
 
 function App() {
   const [taskArray, setTaskArray] = useState(TASKS)
@@ -14,11 +12,11 @@ function App() {
   const [details, setDetails] = useState("")
 
   function handleDeleteTask(e) {
-    // const newTaskArray = taskArray.filter((task) => (task.text !==e.target.id) ? task : null)
-      const newTaskArray = taskArray.filter((task) => {
-        if (task.text !== e.target.id) {
-          return task
-        }})
+    const newTaskArray = taskArray.filter((task) => (task.text !==e.target.id) ? task : null)
+      // const newTaskArray = taskArray.filter((task) => {
+      //   if (task.text !== e.target.id) {
+      //     return task
+      //   }})
     setTaskArray(newTaskArray)
   }
 
